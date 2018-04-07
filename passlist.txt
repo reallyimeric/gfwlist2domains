@@ -3,3 +3,4 @@ github.com
 google.cn
 steampowered.com
 store.steampowered.com
+steamcommunity.com
