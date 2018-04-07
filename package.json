@@ -1,6 +1,6 @@
 {
   "name": "gfwlist2domains",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -12,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^1.7.2",
-    "psl": "^1.1.19"
+    "node-fetch": "^2.1.2",
+    "psl": "^1.1.25"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0"
+  }
 }

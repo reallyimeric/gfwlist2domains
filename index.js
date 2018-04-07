@@ -43,8 +43,8 @@ async function main () {
   const decoded = Buffer.from(list_raw, 'base64').toString().concat('\n', google_domains_list)
 
   const domains = decoded.trim().split('\n').filter(line => {
-    return !(line.trim().length === 0 || line.startsWith('!') || line.startsWith('@')
-      || line.startsWith('[') || line.includes('.*'))
+    return !(line.trim().length === 0 || line.startsWith('!') || line.startsWith('@') ||
+      line.startsWith('[') || line.includes('.*'))
   }).map(fix).filter(l => l).map(valid).filter(l => l)
 
   const domains_set = new Set(domains)

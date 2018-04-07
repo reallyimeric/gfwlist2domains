@@ -2,3 +2,4 @@ node_modules/
 *.conf
 *.rb
 gfwlist.txt
+package-lock.json

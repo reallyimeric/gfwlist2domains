@@ -1,2 +1,5 @@
 github.com
 030buy.com
+google.cn
+steampowered.com
+store.steampowered.com
