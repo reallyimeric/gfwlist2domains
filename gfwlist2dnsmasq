@@ -1,0 +1,37 @@
+#!/usr/bin/env /bin/bash
+
+
+usage() {
+	cat <<-EOF
+Usage: gfwlist2dnsmasq [options]
+
+    Valid options are:
+
+        -s <server>             upstream server to forward to
+        -p <port>               upstream server port
+        -h                      show this help message and exit
+EOF
+}
+
+server=127.0.0.1
+port=1053
+ipset=outwall
+while getopts ":s:p:i:h" arg; do
+	case "$arg" in
+		s)
+			server=${OPTARG}
+			;;
+		p)
+			port=${OPTARG}
+            ;;
+		i)
+			ipset=${OPTARG}
+            ;;
+		h)
+			usage
+			exit 0
+			;;
+	esac
+done
+
+node index.js | sed "s/.*/server=\/&\/${server}#${port}\nipset=\/&\/${ipset}/" -
